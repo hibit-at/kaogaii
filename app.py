@@ -39,9 +39,20 @@ def index():
                             url=url,
                             )
 
+@app.route('/sample')
+def sample():
+    return render_template("index.html", 
+                        row1=[0,1,2],
+                        row2=[3,4,5],
+                        row3=[6,7,8],
+                        choice="init",
+                        title=None,
+                        url=None,
+                        )
+
 @app.route('/faq')
 def faq():
     return render_template("faq.html")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
