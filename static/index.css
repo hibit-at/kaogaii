@@ -1,0 +1,17 @@
+.center {
+  text-align: center;
+}
+
+.img-selected {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-choise {
+  cursor: pointer;
+}
+
+.img-choise:hover {
+  outline: 4px solid #4a62d1;
+}

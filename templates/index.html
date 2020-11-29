@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/favicon.jpg" />
+    <link rel="stylesheet" href="static/index.css" />
     <title>kaogaii</title>
 </head>
 
 <body>
-    <div style="text-align: center;">
-        <h1 style="text-align: center;">VRChat向けアバター紹介サービス「kaogaii」</h1>
+    <div class="center">
+        <h1 class="center">VRChat向けアバター紹介サービス「kaogaii」</h1>
         <p>技術的な仕様上、服等のアバター以外のモデルも交じっていますが、ご容赦ください🙇</p>
         {% if choice == "init" %}
         <h2>サムネイルをクリックしてください。</h2>
         {% else %}
         <h2>現在選ばれている商品（クリックすると商品ページに飛びます）</h2>
-        <p><a href="{{url}}" target="_blank"><img src="static/{{choice}}.png" width="512" height="512"></a></p>
+        <a href="{{url}}" target="_blank">
+            <img class="img-selected" src="static/{{choice}}.png" width="512" height="512">
+        </a>
         <h3>{{title}}</h3>
         {% endif %}
         <p><input type="button" value="Reset" onclick="location.href='./'"></p>
@@ -25,17 +28,17 @@
         {% endif %}
         <p>
             {% for row in row1 %}
-            <img src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
+            <img class="img-choise" src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
             {% endfor %}
         </p>
         <p>
             {% for row in row2 %}
-            <img src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
+            <img class="img-choise" src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
             {% endfor %}
         </p>
         <p>
             {% for row in row3 %}
-            <img src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
+            <img class="img-choise" src="static/{{row}}.png" onclick="location.href='./?choice={{row}}'" width="256" height="256">
             {% endfor %}
         </p>
         <p>作者：<a href="https://twitter.com/hibit_at" target="_blank">@hibit_at</a></p>
